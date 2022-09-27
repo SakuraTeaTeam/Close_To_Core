@@ -28,13 +28,9 @@ namespace Assets.Scripts.Player.Logic
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             _rigidbody.velocity = new Vector2(_joystick.Horizontal * _speed, 0f);
         }
-
-
-
-
     }
 }
