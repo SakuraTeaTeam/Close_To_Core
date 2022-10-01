@@ -2,19 +2,17 @@ using UnityEngine;
 
 public class SaveState : MonoBehaviour
 {
-    [SerializeField]
-    private int _Level;
-    [SerializeField]
-    private int _Floor;
+    private int _level;
+    private int _floor;
     private void Start()
     {
-        _Level = PlayerPrefs.GetInt("Level");
-        _Floor = PlayerPrefs.GetInt("Floor");
+        _level = PlayerPrefs.GetInt("Level");
+        _floor = PlayerPrefs.GetInt("Floor");
     }
 
     private void OnApplicationQuit()
     {
-        PlayerPrefs.SetInt("Level", _Level);
-        PlayerPrefs.SetInt("Floor", _Floor);
+        PlayerPrefs.SetInt("Level", _level);
+        PlayerPrefs.SetInt("Floor", _floor);
     }
 }
