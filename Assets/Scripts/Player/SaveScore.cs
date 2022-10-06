@@ -2,20 +2,18 @@ using UnityEngine;
 
 public class SaveScore : MonoBehaviour
 {
-    [SerializeField] 
-    private int _Score;
-    [SerializeField] 
-    private int _Coins;
+    private int _score;
+    private int _coins;
     
     private void Start()
     {
-        _Score = PlayerPrefs.GetInt("Score");
-        _Coins = PlayerPrefs.GetInt("Coins");
+        _score = PlayerPrefs.GetInt("Score");
+        _coins = PlayerPrefs.GetInt("Coins");
     }
 
     private void OnApplicationQuit()
     {
-        PlayerPrefs.SetInt("Score", _Score);
-        PlayerPrefs.SetInt("Coins", _Coins);
+        PlayerPrefs.SetInt("Score", _score);
+        PlayerPrefs.SetInt("Coins", _coins);
     }
 }
