@@ -6,6 +6,7 @@ namespace Assets.Scripts.State
     {
         private int _level;
         private int _floor;
+
         private void Start()
         {
             _level = PlayerPrefs.GetInt("Level");

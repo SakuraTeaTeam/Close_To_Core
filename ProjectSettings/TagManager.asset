@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Camera
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Level
+    uniqueID: 348192589
+    locked: 0
+  - name: Camera
+    uniqueID: 1365219539
     locked: 0
