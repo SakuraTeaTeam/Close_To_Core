@@ -8,7 +8,8 @@ namespace Assets.Scripts.Foes.Shade
 
         [Header("Movement")]
         [SerializeField] [Range(1, 5)] private float _movementSpeed;
-        [SerializeField] private bool _lookInRight;
+
+        [SerializeField] private bool _lookInRight = true;
 
         private Vector3 _maxLeftDelta, _maxRightDelta;
 
@@ -19,7 +20,7 @@ namespace Assets.Scripts.Foes.Shade
 
         private void Init()
         {
-            _maxLeftDelta = _platformCollider.bounds.center - new Vector3(_platformCollider.bounds.extents.x - 0.25f, 0f, 0f);
+            _maxLeftDelta = _platformCollider.bounds.center - new Vector3(_platformCollider.bounds.extents.x - 0.45f, 0f, 0f);
             _maxRightDelta = _platformCollider.bounds.center + new Vector3(_platformCollider.bounds.extents.x - 0.25f, 0f, 0f);
 
             if (!_lookInRight)
@@ -45,6 +46,11 @@ namespace Assets.Scripts.Foes.Shade
 
         private void MoveAndTurnInOppositeDirection()
         {
+            if (!_lookInRight)
+            {
+                transform.position = new Vector3(_maxLeftDelta.x, transform.position.y, 0f);
+            }
+
             _movementSpeed *= -1f;
             _lookInRight = !_lookInRight;
 
