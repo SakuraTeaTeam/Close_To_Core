@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class SaveState : MonoBehaviour
+namespace Player.Logic
 {
-    private int _level;
-    private int _floor;
-    private void Start()
+    public class SaveState : MonoBehaviour
     {
-        _level = PlayerPrefs.GetInt("Level");
-        _floor = PlayerPrefs.GetInt("Floor");
-    }
+        private int _level;
+        private int _floor;
+        private void Start()
+        {
+            _level = PlayerPrefs.GetInt("Level");
+            _floor = PlayerPrefs.GetInt("Floor");
+        }
 
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.SetInt("Level", _level);
-        PlayerPrefs.SetInt("Floor", _floor);
+        private void OnApplicationQuit()
+        {
+            PlayerPrefs.SetInt("Level", _level);
+            PlayerPrefs.SetInt("Floor", _floor);
+        }
     }
 }
