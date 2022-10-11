@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace Assets.Scripts.Player.Logic
@@ -28,9 +29,18 @@ namespace Assets.Scripts.Player.Logic
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
-        private void FixedUpdate()
+        [SerializeField] private int _jumpforse;
+        public void Jump()
         {
-            _rigidbody.velocity = new Vector2(_joystick.Horizontal * _speed, 0f);
+            print("ПРЫЖОК");
+           // _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpforse);
+           _rigidbody.AddForce(Vector2.up * _jumpforse, ForceMode2D.Impulse);
+        }
+
+        private void Update()
+        {
+            transform.position += transform.right * _joystick.Horizontal * _speed * Time.deltaTime;
+            //_rigidbody.velocity = new Vector2(_joystick.Horizontal * _speed, 0f);
         }
     }
 }

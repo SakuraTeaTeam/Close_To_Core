@@ -18,7 +18,7 @@ namespace Player.Logic
         private void Update()
         {
             //DecreaseHealth();
-            Debug.Log(_hp);
+            //Debug.Log(_hp);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
