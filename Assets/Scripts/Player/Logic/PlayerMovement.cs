@@ -21,9 +21,14 @@ namespace Assets.Scripts.Player.Logic
 
         private void Awake()
         {
+            Application.targetFrameRate = 60;
             Init();
         }
         
+        public void ExitApplivcation()
+        {
+            Application.Quit();
+        }
         private void Init()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -33,7 +38,7 @@ namespace Assets.Scripts.Player.Logic
         public void Jump()
         {
             print("ПРЫЖОК");
-           // _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpforse);
+          //_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpforse);
            _rigidbody.AddForce(Vector2.up * _jumpforse, ForceMode2D.Impulse);
         }
 
