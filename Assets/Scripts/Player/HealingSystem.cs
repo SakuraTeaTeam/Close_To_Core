@@ -4,6 +4,13 @@ public class HealingSystem : MonoBehaviour
 {
     [SerializeField]
     private float _hp;
+    public float Hp
+    {
+        get
+        {
+            return _hp;
+        }
+    }
     [SerializeField]
     private float _maxHp;
 
