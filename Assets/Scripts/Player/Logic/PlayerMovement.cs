@@ -42,7 +42,7 @@ namespace Assets.Scripts.Player.Logic
            _rigidbody.AddForce(Vector2.up * _jumpforse, ForceMode2D.Impulse);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             transform.position += transform.right * _joystick.Horizontal * _speed * Time.deltaTime;
             //_rigidbody.velocity = new Vector2(_joystick.Horizontal * _speed, 0f);

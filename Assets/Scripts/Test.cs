@@ -4,29 +4,16 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    [SerializeField] private int _jumpforse = 6;
-    [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private DynamicJoystick _joystick;
-    [SerializeField] private float _speed = 3.5f;
-    [SerializeField] bool isJumped = false;
-    [SerializeField] LayerMask _mascCollision;
+    [SerializeField] Transform _playertransform;
+    [SerializeField] Vector2 _offset;
 
-    public void Jump()
+    private void Update()
     {
-        print("œ–€∆Œ ");
-        _rigidbody.AddForce(Vector2.up * _jumpforse, ForceMode2D.Impulse);
-    }
-    void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        if(_playertransform.position.y < 2.5f)
+        {
+            _offset = _playertransform.position - transform.position;
+            transform.position = new Vector2(transform.position.x, _offset.y);
+        }
     }
 
-    void Update()
-    {
-        transform.position += transform.right *_joystick.Horizontal * _speed * Time.deltaTime;
-    }
-    private void OncollisionEnter(Collision collision)
-    {
-       // if(collision.mas)
-    }
 }
