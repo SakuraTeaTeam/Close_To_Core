@@ -41,8 +41,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Level
-    uniqueID: 348192589
+  - name: BGroundLayer
+    uniqueID: 432280401
+    locked: 0
+  - name: PlatformsLayer
+    uniqueID: 2476404627
     locked: 0
   - name: Camera
     uniqueID: 1365219539

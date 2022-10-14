@@ -21,7 +21,6 @@ namespace Assets.Scripts.Player.Logic
 
         private void Awake()
         {
-            Application.targetFrameRate = 60;
             Init();
         }
         
@@ -44,8 +43,13 @@ namespace Assets.Scripts.Player.Logic
 
         private void FixedUpdate()
         {
+            //transform.position = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
             transform.position += transform.right * _joystick.Horizontal * _speed * Time.deltaTime;
             //_rigidbody.velocity = new Vector2(_joystick.Horizontal * _speed, 0f);
+        }
+        private void OnCollisionEnter(Collision collision)
+        {
+            //if(collision)
         }
     }
 }
