@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+//using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 namespace Assets.Scripts.Player.Logic
@@ -28,6 +29,10 @@ namespace Assets.Scripts.Player.Logic
         {
             Application.Quit();
         }
+        public void ReloadScene()
+        {
+            Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        }
         private void Init()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -36,20 +41,15 @@ namespace Assets.Scripts.Player.Logic
         [SerializeField] private int _jumpforse;
         public void Jump()
         {
-            print("ПРЫЖОК");
-          //_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpforse);
            _rigidbody.AddForce(Vector2.up * _jumpforse, ForceMode2D.Impulse);
         }
 
         private void FixedUpdate()
         {
-            //transform.position = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
             transform.position += transform.right * _joystick.Horizontal * _speed * Time.deltaTime;
-            //_rigidbody.velocity = new Vector2(_joystick.Horizontal * _speed, 0f);
         }
         private void OnCollisionEnter(Collision collision)
         {
-            //if(collision)
         }
     }
 }

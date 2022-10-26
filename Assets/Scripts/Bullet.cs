@@ -6,8 +6,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] Vector2 _spownPosition;
-    [SerializeField] Vector2 _scaleMy;
-
 
     void Start()
     {
