@@ -64,6 +64,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         OnDrag(eventData);
+
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -78,9 +79,11 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     protected virtual void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)
     {
+        
         if (magnitude > deadZone)
         {
             if (magnitude > 1)
+                handle.localPosition = Vector2.zero;
                 input = normalised;
         }
         else

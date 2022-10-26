@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+//using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 namespace Assets.Scripts.Player.Logic
@@ -23,14 +25,31 @@ namespace Assets.Scripts.Player.Logic
             Init();
         }
         
+        public void ExitApplivcation()
+        {
+            Application.Quit();
+        }
+        public void ReloadScene()
+        {
+            Application.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        }
         private void Init()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
+        [SerializeField] private int _jumpforse;
+        public void Jump()
+        {
+           _rigidbody.AddForce(Vector2.up * _jumpforse, ForceMode2D.Impulse);
+        }
+
         private void FixedUpdate()
         {
-            _rigidbody.velocity = new Vector2(_joystick.Horizontal * _speed, 0f);
+            transform.position += transform.right * _joystick.Horizontal * _speed * Time.deltaTime;
+        }
+        private void OnCollisionEnter(Collision collision)
+        {
         }
     }
 }
