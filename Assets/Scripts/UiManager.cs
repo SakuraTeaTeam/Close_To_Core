@@ -1,52 +1,98 @@
+                                              // BY: Mylti
 using UnityEngine;
-
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class UiManager : MonoBehaviour
 {
     [SerializeField]
-    private Sprite _heart1;
-    [SerializeField]
-    private Sprite _heart2;
-    [SerializeField]
-    private Sprite _heart3;
+    private Image[] _heartImages;
     [SerializeField]
     private Sprite _damageHeart;
     [SerializeField]
-    private HealingSystem _healingSystem;
+    private Sprite _fullHeart;
     [SerializeField]
-    private float _limit1;
+    private Image _music;
     [SerializeField]
-    private float _limit2;
+    private Sprite _musicOn;
     [SerializeField]
-    private float _limit3;
+    private Sprite _musicOff;
+    private static float a = 1f;
+    [SerializeField]
+    private HealingSystem _csHealingSystem;
+    [SerializeField]
+    private GameObject _settings;
+    [SerializeField]
+    private GameObject _foneStart;
 
+    private void Start()
+    {
+        _csHealingSystem = FindObjectOfType<HealingSystem>();
+        Time.timeScale = 0;
+        _foneStart.SetActive(true);
+        _music.sprite = _musicOn;
+    }
     private void Update()
     {
-        if(_healingSystem.Hp < _limit3)
-        {
-            _heart3 = _damageHeart;
-        }
-        else if(_healingSystem.Hp < _limit2)
-        {
-            _heart2 = _damageHeart;
-        }
-        else if(_healingSystem.Hp < _limit1)
-        {
-            _heart1 = _damageHeart;
-        }
-        if(_healingSystem.Hp > _limit1)
-        {
-            _heart1 = _heart1;
-        }
-        else if(_healingSystem.Hp > _limit2)
-        {
-            _heart2 = _heart1;
-        }
-        else if (_healingSystem.Hp > _limit3)
-        {
-            _heart3 = _heart1;
-        }
-      
+        CheckHP(_csHealingSystem.Hp);
     }
 
-
+    private void CheckHP(float HP)
+    {
+        for (int i = 0; i < _heartImages.Length; i++)
+        {
+            if(i < Mathf.RoundToInt(_csHealingSystem.Hp))
+            {
+                _heartImages[i].sprite = _fullHeart;
+            }
+            else
+            {
+                _heartImages[i].sprite = _damageHeart;
+            }
+            if(i < _csHealingSystem.MaxHP)
+            {
+                _heartImages[i].enabled = true;
+            }
+            else
+            {
+                _heartImages[i].enabled = false;
+            }
+        }
+    }
+    public void Settings()
+    {
+        if(_settings.activeSelf == false)
+        {
+            _settings.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            _settings.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        _foneStart.SetActive(false);
+    }
+    public void Music()
+    {
+        if(_music.sprite == _musicOn)
+        {
+            _music.sprite = _musicOff;
+        }
+        else
+        {
+            _music.sprite = _musicOn;
+        }
+    }
+    public void Exit()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

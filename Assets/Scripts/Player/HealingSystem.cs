@@ -3,6 +3,8 @@ using UnityEngine;
 public class HealingSystem : MonoBehaviour
 {
     [SerializeField]
+    private float _damage;
+    [SerializeField]
     private float _hp;
     public float Hp
     {
@@ -10,9 +12,16 @@ public class HealingSystem : MonoBehaviour
         {
             return _hp;
         }
-    }
+    }    
     [SerializeField]
-    private float _maxHp;
+    private float _maxHp ;
+    public float MaxHP
+    {
+        get
+        {
+            return _maxHp;
+        }
+    }
 
     private void Start()
     {
@@ -43,6 +52,6 @@ public class HealingSystem : MonoBehaviour
     
     void DecreasHealth()
     {
-        _hp -= Time.deltaTime;
+        _hp -= Time.deltaTime * _damage;
     }
 }

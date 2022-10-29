@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42d0c3e44b9f3a74e98585a38bb76639
+guid: 5c8e37348246dd548bbb026e4ad32ed9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 116.28
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,25 +105,25 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1_0
+      name: ui2_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 160
-        width: 80
-        height: 80
+        x: 3
+        y: 44
+        width: 20
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dae4de7ad37982247bc99e2f1e4e39f8
-      internalID: 1760042070
+      spriteID: 018cbfa0cf36d1242819e96100e8be65
+      internalID: -1704790362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1_1
+      name: ui2_1
       rect:
         serializedVersion: 2
-        x: 171
-        y: 155
-        width: 80
-        height: 80
+        x: 29
+        y: 31
+        width: 17
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 330ee3fcf43456842b179a1a528ace11
-      internalID: 557875815
+      spriteID: f9a1418cb386fd54ea6268f4a4c5eaaa
+      internalID: 1624606884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1_2
+      name: ui2_2
       rect:
         serializedVersion: 2
-        x: 81
-        y: 85
-        width: 70
-        height: 60
+        x: 2
+        y: 23
+        width: 21
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f0d239eaca1c641a9992aea521aab4
-      internalID: -368369878
+      spriteID: b369e7a6a9385504db93d4b1832a7fa0
+      internalID: 543952852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1_3
+      name: ui2_3
       rect:
         serializedVersion: 2
-        x: 176
-        y: 85
-        width: 70
-        height: 60
+        x: 29
+        y: 11
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +194,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67a92e20594fb9e489a41b2f911f258f
-      internalID: -663533934
+      spriteID: 3101380b882d86a42b355d57cf943e82
+      internalID: -957710927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be5b7e1995d38b48847766671ea663a
+      internalID: 216106798
       vertices: []
       indices: 
       edges: []
@@ -211,10 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1_1: 557875815
-      1_0: 1760042070
-      1_2: -368369878
-      1_3: -663533934
+      ui2_0: -1704790362
+      ui2_1: 1624606884
+      ui2_2: 543952852
+      ui2_3: -957710927
+      ui2_4: 216106798
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
